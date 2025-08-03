@@ -2,7 +2,7 @@
 
 // Typing effect for the introduction
 const typingText = document.getElementById('typing-text');
-const words = ['Moatasem.', 'A Developer.', 'An Innovator.']; // More professional messages
+const words = ['Moatasem.', 'A professional Technical Support.', 'An Innovator.']; // More professional messages
 let wordIndex = 0;
 let charIndex = 0;
 
@@ -91,4 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
 });
