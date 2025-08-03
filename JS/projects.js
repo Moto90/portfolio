@@ -82,16 +82,16 @@ const projects = [
         'media/Cybersecurity-Project-Portfolio/4.JPG',
         'media/Cybersecurity-Project-Portfolio/5.JPG',
         'media/Cybersecurity-Project-Portfolio/6.JPG',
-        'media/Cybersecurity-Project-Portfolio/7.jpg',
-        'media/Cybersecurity-Project-Portfolio/8.jpg',
-        'media/Cybersecurity-Project-Portfolio/9.jpg',
-        'media/Cybersecurity-Project-Portfolio/Cross site tracking (XST).jpg',
-        'media/Cybersecurity-Project-Portfolio/Database backdoor.jpg',
-        'media/Cybersecurity-Project-Portfolio/Numerical SQL injection.jpg',
-        'media/Cybersecurity-Project-Portfolio/Reflected XSS Attacks.jpg',
-        'media/Cybersecurity-Project-Portfolio/Stored XSS Attacks.jpg',
-        'media/Cybersecurity-Project-Portfolio/String SQL injection.jpg',
-        'media/Cybersecurity-Project-Portfolio/Blind SQL injection.jpg'
+        'media/Cybersecurity-Project-Portfolio/7.JPG',
+        'media/Cybersecurity-Project-Portfolio/8.JPG',
+        'media/Cybersecurity-Project-Portfolio/9.JPG',
+        'media/Cybersecurity-Project-Portfolio/Cross site tracking (XST).JPG',
+        'media/Cybersecurity-Project-Portfolio/Database backdoor.JPG',
+        'media/Cybersecurity-Project-Portfolio/Numerical SQL injection.JPG',
+        'media/Cybersecurity-Project-Portfolio/Reflected XSS Attacks.JPG',
+        'media/Cybersecurity-Project-Portfolio/Stored XSS Attacks.JPG',
+        'media/Cybersecurity-Project-Portfolio/String SQL injection.JPG',
+        'media/Cybersecurity-Project-Portfolio/Blind SQL injection.JPG'
       ],
     },
     {
@@ -228,3 +228,4 @@ const projects = [
     }
 
   });
+
