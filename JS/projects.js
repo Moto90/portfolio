@@ -79,9 +79,9 @@ const projects = [
       name: 'Cybersecurity-Project-Portfolio',
       description: 'contains a collection of cybersecurity lab activities and projects completed as part of my practical learning in web application security. It includes vulnerable web applications, offensive security exercises, and defensive hardening measures implemented on both Windows and Ubuntu systems.',
       images: [
-        'media/Cybersecurity-Project-Portfolio/4.jpg',
-        'media/Cybersecurity-Project-Portfolio/5.jpg',
-        'media/Cybersecurity-Project-Portfolio/6.jpg',
+        'media/Cybersecurity-Project-Portfolio/4.JPG',
+        'media/Cybersecurity-Project-Portfolio/5.JPG',
+        'media/Cybersecurity-Project-Portfolio/6.JPG',
         'media/Cybersecurity-Project-Portfolio/7.jpg',
         'media/Cybersecurity-Project-Portfolio/8.jpg',
         'media/Cybersecurity-Project-Portfolio/9.jpg',
@@ -226,4 +226,5 @@ const projects = [
         closePopup();
       }
     }
+
   });
