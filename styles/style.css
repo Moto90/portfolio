@@ -1,348 +1,576 @@
 /* styles.css */
 
-/* General Styles */
-body {
-    background-color: #000000;
-    color: #fff;
-    font-family: 'Rubik Vinyl', cursive;
-    margin: 0;
-    
-    padding-top: 50px;
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur117.cur),default;
-    
+/* GitHub Inspired Variables */
+:root {
+    --gh-bg-primary: #0D1117; /* Darkest background */
+    --gh-bg-secondary: #161B22; /* Slightly lighter for sections/cards */
+    --gh-bg-tertiary: #21262D; /* Lighter for inner elements/hover states */
+    --gh-text-primary: #C9D1D9; /* Light gray text */
+    --gh-text-secondary: #8B949E; /* Muted gray for secondary text/labels */
+    --gh-accent-green: #238636; /* GitHub green */
+    --gh-accent-green-hover: #2D883F; /* Darker green on hover */
+    --gh-border-color: #30363D; /* Subtle border color */
+    --gh-focus-outline: #58A6FF; /* Blue for focus states (accessibility) */
 }
 
-#home {
-    background-image: url("imges/2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 650px;
-    padding: 50px;
+/* General Styles */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for internal links */
+}
+
+body {
+    background-color: var(--gh-bg-primary);
+    color: var(--gh-text-primary);
+    font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding-top: 70px; /* Space for fixed navbar */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Google Fonts - Inter for general text, Fira Code for code-like elements, and perhaps a clean bold sans-serif for main titles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif; /* Using Inter for headings for consistency */
+    color: var(--gh-text-primary);
     text-align: center;
-    color: #fff;
-  }
-  
-  #home h1, #home h2 {
-    font-size: 35px; /* Increase font size to 24px */
-    font-family: 'Codystar', cursive; /* Change font family to Arial or any other preferred font */
-    color: hsl(182, 100%, 66%); /* Change font color to green */
-  }
-  #home p{
-    font-size: 25px;
-    font-family: 'Codystar', cursive;
-    color: #fff;
-  }
-  #home span#typing-text {
-    font-size: 35px; /* Adjust the font size as per your preference */
-  }
-  .button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #500000; /* Customize the color as desired */
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    border-radius: 6px;
-    border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #23527c; /* Customize the hover color as desired */
-  }
-  .container {
-    max-width: 960px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1280px; /* Wider container for content */
     margin: 0 auto;
-    padding: 20px;
-  }
-  .navbar {
+    padding: 0 20px; /* Horizontal padding */
+}
+
+/* Navbar */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #030018;
-    z-index: 999;
-  }
-  /* Navbar */
-  nav ul {
+    background-color: var(--gh-bg-secondary);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gh-border-color);
+}
+
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color:#000013;
     display: flex;
-    justify-content: space-around;
-    padding: 15px 20px;
     justify-content: flex-end;
-  }
-  nav ul li a.active {
-    color: red;
-  }
-  nav li {
-    display: inline-block;
-    margin-left: 10px;
-    padding-right: 10px;
-  }
-  
-  nav a {
+    align-items: center;
+    padding-right: 20px;
+}
+
+.navbar li {
+    margin-left: 30px; /* More spacing */
+}
+
+.navbar a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  /* Introduction */
-  #typing-text {
-    display: inline-block;
-    animation: typing 2s steps(20) 1s 1 normal both;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #fff;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  
-  /* About Me */
+    color: var(--gh-text-primary);
+    font-weight: 500;
+    padding: 8px 0; /* Only vertical padding, underline will be handled */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    border-bottom: 2px solid transparent; /* Transparent border for smooth transition */
+}
 
-  #about {
-    background-color: #061338bf;
-    height: 600%;
-    padding: 50px;
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Didact Gothic', sans-serif;
-  }
-  #about p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-  /* About Me Section */
-  .aboutme {
-    padding-bottom: 25px;
-    margin-bottom: 50px;
-  }
-  .logos-container {
+.navbar a:hover {
+    color: var(--gh-accent-green);
+    border-bottom-color: var(--gh-accent-green);
+}
+
+.navbar a.active {
+    color: var(--gh-accent-green);
+    border-bottom-color: var(--gh-accent-green);
+}
+
+/* Home Section */
+#home {
+    background-color: var(--gh-bg-primary); /* Use primary background for a clean look */
+    /* If you want a subtle pattern, you could use a very dark, tiling SVG or small image */
+    height: 80vh; /* Responsive height */
     display: flex;
-    justify-content: center; /* Horizontally center the logos */
-    align-items: center; /* Vertically center the logos */
-    flex-wrap: wrap; /* Allow logos to wrap to a new row */
-    gap: 20px; /* Add some spacing between logos */
-    padding: 20px; /* Add some padding for spacing */
-    margin-bottom: 50px;
-    z-index: 1;
-  }
-  
-  .logos-container img {
-    width: 75px; /* Adjust the size of the skill logos */
-    height: 75px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#home h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem); /* Larger, more impactful */
+    color: var(--gh-text-primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+#home h2 {
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    color: var(--gh-text-primary);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+#home p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--gh-text-secondary); /* Muted text for description */
+    max-width: 900px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+#home span#typing-text {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    color: var(--gh-accent-green); /* Green accent for the name */
+    display: inline-block;
+    border-right: 3px solid var(--gh-text-primary); /* Blinking cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace; /* Monospace for the name */
+}
+
+/* General Button Style (GitHub Green) */
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--gh-accent-green);
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 6px; /* Slightly less rounded */
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    text-transform: capitalize; /* Keep capitalization normal */
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--gh-accent-green-hover);
+    transform: translateY(-1px); /* Slight lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Common Styles */
+section {
+    padding: 80px 0; /* Consistent vertical padding */
+    border-top: 1px solid var(--gh-border-color); /* Subtle separator */
+}
+
+section:first-of-type {
+    border-top: none; /* No top border for the first section after navbar */
+}
+
+/* About Me Section */
+#about {
+    background-color: var(--gh-bg-secondary);
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: var(--gh-text-primary);
+}
+
+#about h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 40px;
+    color: var(--gh-text-primary);
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+}
+
+.logos-container img {
+    width: 70px; /* Slightly smaller for GitHub aesthetic */
+    height: 70px;
     object-fit: contain;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
-    margin: 10px;
-    max-width: 100px;
-  }
-  
-  .logos-container img:hover {
-    transform: rotateY(180deg); /* Flip the logo on hover */
-  }
-  
-  /* Add media queries to adjust the container size for different screen sizes */
-  @media screen and (max-width: 768px) {
-    
-    .logos-container,
-    .project-gallery
-     {
-      padding: 60px; /* Adjust the padding for smaller screens */
-      width: 80%;
-      margin: 0 auto;
-      z-index: 1;
-    }
-    .logos-container img{
-      width: 40%;
-      height: 40%;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    filter: grayscale(100%); /* Start fully desaturated */
+    opacity: 0.7; /* Slightly faded when not hovered */
+    border-radius: 8px; /* Soften edges */
+}
 
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .aboutme,
-    .logos-container ,
-    .project-gallery{
-      gap: 10px; /* Adjust the spacing for smaller screens */
-      margin-bottom: 100px;
-      width: 50%;
-      margin: 0 auto;
-    }
-  }
+.logos-container img:hover {
+    transform: translateY(-5px) scale(1.1); /* Subtle lift and scale */
+    filter: grayscale(0%); /* Full color on hover */
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 15px var(--gh-accent-green); /* Subtle glow */
+}
 
-  /* Projects */
-  .project-gallery {
+/* Credly Badge Styling */
+div[data-share-badge-id] {
+    margin: 30px auto;
+    display: block;
+    max-width: 150px; /* Ensure it doesn't break layout */
+}
+
+
+/* Projects Page Specific Styles */
+.projects-page {
+    background-color: var(--gh-bg-primary);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.projects-page h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 50px;
+}
+
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    justify-items: center;
-    padding-right: 15px;
-    text-align: center;
-  }
-  #projects {
-    text-align: center;
-    height: 600%;
-    padding-top: 25px;
-  }
-  .project-item {
-    position: relative;
-    width: 320px; /* Adjust the width to your desired value */
-    height: 380px; /* Adjust the height to your desired value */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-card {
+    background: var(--gh-bg-secondary);
+    border-radius: 10px;
+    padding: 25px;
+    color: var(--gh-text-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow: hidden;
-    padding-right: 15px;
+    border: 1px solid var(--gh-border-color); /* Subtle border */
+    overflow: hidden; /* For image transition */
+}
 
-    
-  }
-  .project-item img {
-    width: 300px; /* Adjust the width to your desired value */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    border-color: var(--gh-accent-green); /* Green border on hover */
+}
+
+.project-card img {
+    width: calc(100% + 50px); /* Slightly larger than container for overflow */
     height: 200px;
-    border-radius: 10px; /* Adjust the border radius to your desired value */
-  }
-  .project-item img {
-
-    cursor: pointer;
-    margin-bottom: 10px; /* Add margin below the project image */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
-  }
-  .project-item:hover img {
-    transform: scale(1.2);
-    border-radius: 10px;
-  }
-  .logo-container {
+    filter: brightness(0.8); /* Slightly dim image */
+    margin-top: -25px; /* Pull image up to cover padding area */
+    margin-left: -25px; /* Pull image left */
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Subtle zoom */
+    filter: brightness(1); /* Full brightness on hover */
+}
+
+.project-card h3 {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    color: var(--gh-text-primary);
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--gh-text-secondary);
+    flex-grow: 1;
+    margin-bottom: 15px;
+    padding: 0 10px; /* Inner padding for description */
+}
+
+.tech-icons {
+    margin-top: auto;
     display: flex;
     justify-content: center;
-    gap: 10px; /* Adjust the gap between the logos as needed */
-  }
-  .logo-container img {
-    width: 35px; /* Adjust the width of the logos as needed */
-    height: 35px; /* Adjust the height of the logos as needed */
-  }
-  
-  /* Popup */
-  #popup-container {
-    display: none;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 10px; /* Space between description and icons */
+}
+
+.tech-icons img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: grayscale(80%); /* More desaturated by default */
+    opacity: 0.8;
+    margin: 0; /* Reset margins from general img style */
+}
+
+.tech-icons img:hover {
+    transform: translateY(-3px) scale(1.1); /* Subtle lift */
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Contact Me */
+#contact {
+    text-align: center;
+    background-color: var(--gh-bg-secondary);
+}
+
+#contact h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 30px;
+    color: var(--gh-text-primary);
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--gh-text-primary);
+}
+
+.contact-info {
+    font-weight: 500;
+    color: var(--gh-accent-green); /* Green for contact details */
+    font-family: 'Fira Code', monospace; /* Monospace for contact info */
+}
+
+.social-media {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-media img {
+    width: 40px; /* Slightly smaller for professionalism */
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+    filter: grayscale(100%); /* Start fully desaturated */
+    opacity: 0.7; /* Faded */
+}
+
+.social-media img:hover {
+    transform: translateY(-5px) scale(1.1); /* Subtle lift */
+    filter: grayscale(0%); /* Full color */
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background-color: var(--gh-bg-secondary);
+    text-align: center;
+    padding: 20px 0;
+    color: var(--gh-text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--gh-border-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .navbar li {
+        margin: 0 15px;
+    }
+
+    #home {
+        height: 70vh; /* Adjust height for smaller screens */
+        padding-top: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .project-card {
+        margin: 0 10px; /* Add some side margin */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .navbar li {
+        margin: 0 8px;
+    }
+
+    .navbar a {
+        padding: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    #home {
+        height: 80vh;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .logos-container {
+        gap: 15px;
+    }
+
+    .logos-container img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-media img {
+        width: 35px;
+        height: 35px;
+    }
+}
+/* --- Pop-up Styles (GitHub-like) --- */
+.popup-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-  }
-  
-  .popup-content {
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Above everything else */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup-content {
+    position: relative;
+    background-color: var(--gh-bg-secondary);
+    border: 1px solid var(--gh-border-color);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gh-text-secondary);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-popup:hover {
+    color: var(--gh-text-primary);
+}
+
+.popup-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#popup-image {
+    max-width: 100%;
+    max-height: 70vh; /* Adjust height for different screens */
+    border-radius: 8px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.popup-nav-btn {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #000;
+    transform: translateY(-50%);
+    background: rgba(45, 50, 56, 0.6); /* Semi-transparent dark button */
+    border: 1px solid var(--gh-border-color);
+    color: var(--gh-text-primary);
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
     cursor: pointer;
-  }
-  
-  .image-container {
-    margin-bottom: 20px;
-  }
-  
-  .popup-image {
-    max-width: 100%;
-    max-height: 80vh;
-  }
-  
-  .pagination {
-    margin-top: 10px;
-  }
-  
-  .prev-btn,
-  .next-btn {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .prev-btn:focus,
-  .next-btn:focus {
-    outline: none;
-  }
-  .popup-description {
-    color: rgb(8, 0, 233);
-    font-family: 'Times New Roman', Times, serif;
-  }
-  #projects p {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  /* Contact Me */
-  #contact p {
-    font-size: 18px;
-  }
-  #contact {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    height: 400%;
-  }
-  
-  .contact-info {
-    font-weight: bold;
-  }
-  
-  .social-media img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .social-media img:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #0a0909;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  footer p {
-    font-size: 14px;
-    margin: 0;
-    font-family: 'Revalia', cursive;
-  }
-  
-  footer .social-media {
-    margin-top: 10px;
-  }
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
 
+.popup-nav-btn:hover {
+    background-color: var(--gh-accent-green-hover);
+    color: #fff;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+#popup-title {
+    font-size: 2rem;
+    color: var(--gh-text-primary);
+    margin-bottom: 10px;
+}
+
+#popup-description {
+    font-size: 1rem;
+    color: var(--gh-text-secondary);
+    margin-top: 0;
+    text-align: left;
+    white-space: pre-line; /* Preserves line breaks from the JS data */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media screen and (max-width: 768px) {
+    .popup-content {
+        padding: 20px;
+    }
+    .popup-nav-btn {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+    .close-popup {
+        font-size: 2rem;
+    }
+}
